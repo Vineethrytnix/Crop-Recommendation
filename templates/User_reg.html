@@ -1,0 +1,87 @@
+{% extends 'common.html' %}
+{% load static %}
+{% block header %}
+
+<style>
+    #pass {
+        height: 64px;
+        width: 100%;
+        border: none;
+        background-color: var(--agrion-extra);
+        border-radius: var(--agrion-bdr-radius);
+        padding-left: 30px;
+        padding-right: 30px;
+        outline: none;
+        font-size: 14px;
+        color: var(--agrion-gray);
+        display: block;
+        font-weight: 500;
+    }
+</style>
+
+
+<section class="contact-two">
+    <div class="contact-two__shape-1 float-bob-x">
+        <img src="{% static 'assets/images/shapes/contact-two-shape-1.png' %}" alt="">
+    </div>
+    <div class="container">
+        <div class="section-title text-center">
+            <span class="section-title__tagline">Farmers</span>
+            <h2 class="section-title__title">Register Here</h2>
+            <div class="section-title__icon">
+                <img src="{% static 'assets/images/icon/section-title-icon-1.png' %}" alt="">
+            </div>
+        </div>
+        <div class="contact-two__form-box">
+            <form method="post" class="contact-two__form " novalidate="novalidate"
+                enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="contact-form__input-box">
+                            <input type="text" placeholder="Your Name" required name="name">
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="contact-form__input-box">
+                            <input type="email" placeholder="Email Address" required name="email">
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="contact-form__input-box">
+                            <input type="text" placeholder="Phone" name="phone" maxlength="10" minlength="10"
+                                pattern="[6789][0-9]{9}" required>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="contact-form__input-box">
+                            <input type="file" placeholder="Subject" name="image" id="pass" required>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="contact-form__input-box">
+                            <input type="password" id="pass" placeholder="Password" name="password" required
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="contact-form__input-box text-message-box">
+                            <textarea name="address" placeholder="Enter Your Address" required></textarea>
+                        </div>
+                        <div class="contact-form__btn-box">
+                            <button type="submit" class="thm-btn contact-two__btn">Register<i
+                                    class="icon-right-arrow"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

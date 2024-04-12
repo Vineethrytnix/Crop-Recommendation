@@ -1,0 +1,82 @@
+{% extends 'User/common.html' %}
+{% load static %}
+{% block header %}
+
+<style>
+    .feedback-form {
+        background-color: #cfcccc;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        float: left;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+        /* Makes sure padding does not affect the overall width */
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        /* Allows vertical resizing, might be useful for a feedback form */
+    }
+
+    .form-button {
+        background-color: #0056b3;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .form-button:hover {
+        background-color: #004494;
+    }
+</style>
+
+<br><br>
+
+<center>
+    <div class="feedback-form">
+        <h2>Feedback Form</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Subject:</label>
+                <input type="text" id="email" name="sub" required placeholder="Enter Subject">
+            </div>
+            <div class="form-group">
+                <label for="feedback">Feedback:</label>
+                <textarea id="feedback" name="feedback" rows="4" placeholder="Enter Your Feedback" required></textarea>
+            </div>
+            <button type="submit" class="form-button">Submit</button>
+        </form>
+    </div>
+
+</center>
+
+<br><br>
+
+{% endblock %}

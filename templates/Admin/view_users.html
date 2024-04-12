@@ -1,0 +1,51 @@
+{% extends 'Admin/common.html' %}
+{% load static %}
+{% block header %}
+
+
+<section class="services-one">
+    <div class="services-one__bg" style="background-image: url(/static/assets/images/shapes/services-one-shape-1.png);">
+    </div>
+    <div class="container">
+        <div class="section-title text-center">
+            <span class="section-title__tagline">What We’re Doing</span>
+            <h2 class="section-title__title">Services We’re offering</h2>
+            <div class="section-title__icon">
+                <img src="{% static 'assets/images/icon/section-title-icon-1.png' %}" alt="">
+            </div>
+        </div>
+        <div class="row">
+            {% for i in view %}
+            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInLeft" data-wow-delay="100ms">
+                <div class="services-one__single">
+                    <div class="services-one__img-box">
+                        <div class="services-one__img">
+                            <img src="/static/media/{{i.image}}" alt="">
+                        </div>
+                        <div class="services-one__icon">
+                            <span class="icon-organic-food"></span>
+                        </div>
+                    </div>
+                    <div class="services-one__content">
+                        <h3 class="services-one__title">{{i.name}}
+                            </a></h3>
+                        <p class="services-one__text">{{i.email}} <br> {{i.phone}}</p>
+                        <p class="services-one__text">{{i.address}}</p>
+                        <br>
+                        {% if i.loginid.is_active == '0' %}
+                        <a href="/update_user_status?email={{i.email}}&status=success"
+                            class="btn btn-success">Approve</a>
+                        <a href="/update_user_status?email={{i.email}}&status=reject" class="btn btn-danger">Delete</a>
+                        {% else %}
+                        <a class="btn btn-success">Approved</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,497 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from pixydrops.com/agrionhtml/main-html/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Mar 2024 15:32:04 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crop_Recommendation</title>
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/favicons/apple-touch-icon.png' %}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicons/favicon-32x32.png' %}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicons/favicon-16x16.png' %}" />
+    <link rel="manifest" href="{% static 'assets/images/favicons/site.webmanifest' %}" />
+    <meta name="description" content="Agrion HTML 5 Template " />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/animate/custom-animate.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/jarallax/jarallax.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/nouislider/nouislider.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/nouislider/nouislider.pips.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/odometer/odometer.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/swiper/swiper.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/agrion-icons/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/tiny-slider/tiny-slider.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/reey-font/stylesheet.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/owl.carousel.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/owl.theme.default.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/bxslider/jquery.bxslider.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap-select/css/bootstrap-select.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/vegas/vegas.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/jquery-ui/jquery-ui.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/timepicker/timePicker.css' %}" />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="{% static 'assets/css/agrion.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/agrion-responsive.css' %}" />
+
+
+    <style>
+        #pass {
+            height: 64px;
+            width: 100%;
+            border: 1px solid cadetblue;
+            background-color: var(--agrion-extra);
+            border-radius: var(--agrion-bdr-radius);
+            padding-left: 30px;
+            padding-right: 30px;
+            outline: none;
+            font-size: 14px;
+            color: var(--agrion-gray);
+            display: block;
+            font-weight: 500;
+        }
+
+        #crop {
+            font-weight: 800;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+
+</head>
+
+<body class="custom-cursor">
+
+    {% if alert_msg %}
+    <script>
+        alert("{{ alert_msg|escapejs }}");
+    </script>
+    {% endif %}
+
+    <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor-two"></div>
+
+
+
+
+
+    <div class="preloader">
+        <div class="preloader__image"></div>
+    </div>
+    <!-- /.preloader -->
+
+
+    <div class="page-wrapper">
+        <header class="main-header">
+            <div class="main-header__wrapper">
+                <div class="main-header__wrapper-inner">
+                    <div class="main-header__logo">
+                        <a href=""><img src="{% static 'assets/images/resources/logo-1.png' %}" alt=""></a>
+                    </div>
+                    <div class="main-header__menu-box">
+                        <div class="main-header__menu-box-top">
+                            <ul class="list-unstyled main-header__contact-list">
+                                <li>
+                                    <div class="icon">
+                                        <i class="icon-email"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p><a href="mailto:Agricrop@gmail.com">Agricrop@gmail.com</a></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="icon-pin"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>Marine Drive Kochi Kerala</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="main-header__menu-box-bottom">
+                            <nav class="main-menu">
+                                <div class="main-menu__wrapper">
+                                    <div class="main-menu__wrapper-inner">
+                                        <div class="main-menu__left">
+                                            <div class="main-menu__main-menu-box">
+                                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                                <ul class="main-menu__list">
+                                                    <li class="dropdown current megamenu">
+                                                        <a href="/user_home">Home</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/add_feedback">Feedback</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/login">Logout</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="main-header__phone-contact-box">
+                        <div class="main-header__phone-number">
+                            <a href="tel:9200886823">+92 8768743856</a>
+                        </div>
+                        <div class="main-header__call-box">
+                            <div class="main-header__call-inner">
+                                <div class="main-header__call-icon">
+                                    <span class="fas fa-phone"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+
+        <!--Main Slider Start-->
+
+        <!--Main Slider End-->
+
+        <!--Feature One Start-->
+
+        <!--Brand One End-->
+
+        <!--Unbeatable One Start-->
+        <section class="unbeatable-one">
+            <div class="unbeatable-one__bg  jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
+                style="background-image: url(/static/assets/images/backgrounds/unbeatable-one-bg.jpg);"></div>
+            <div class="container">
+                <div class="unbeatable-one__inner text-center">
+                    <div class="unbeatable-one__content">
+                        <div class="unbeatable-one__shape-one wow slideInLeft" data-wow-delay="100ms"
+                            data-wow-duration="2500ms">
+                            <img src="{% static 'assets/images/shapes/unbeatable-shape-1.png' %}" alt=""
+                                class="float-bob-y">
+                        </div>
+                        <div class="unbeatable-one__shape-two wow slideInRight" data-wow-delay="100ms"
+                            data-wow-duration="2500ms">
+                            <img src="{% static 'assets/images/shapes/unbeatable-shape-2.png' %}" alt=""
+                                class="float-bob-y">
+                        </div>
+                        <p class="unbeatable-one__tagline">We’re Predicting Seasonal Crops</p>
+                        <h3 class="unbeatable-one__title">Agricultural Crop Recommendation System</h3>
+
+                        <div class="unbeatable-one__btn-box">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Project One End-->
+
+        <!--Contact One Start-->
+        <section class="contact-one mt-5">
+            <div class="container">
+                <center>
+                    <h2 class="section-title__title"><b>Predict Crop</b></h2><br>
+                </center>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-xl-8 col-lg-7">
+                        <div class="contact-one__right">
+                            <div class="contact-one__bg float-bob-x"
+                                style="background-image: url(/static/assets/images/shapes/contact-one-shape-1.png);">
+                            </div>
+                            <div class="row">
+                                <div class="contact-one__form-box">
+                                    <form class="contact-one__form" method="post" novalidate="novalidate">
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                                <div class="contact-one__input-box">
+                                                    <input type="text" placeholder="Enter Rain Fall Value" name="rain"
+                                                        required>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                                <div class="contact-one__input-box">
+                                                    <input type="text" placeholder="Enter Area Value" name="area"
+                                                        required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                                <div class="contact-one__input-box">
+                                                    <select name="state" required id="pass">
+                                                        <option value="" selected disabled>Select State</option>
+                                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                                        <option value="Assam">Assam</option>
+                                                        <option value="Bihar">Bihar</option>
+                                                        <option value="Chhattisgarh">Chhattisgarh</option>
+                                                        <option value="Goa">Goa</option>
+                                                        <option value="Gujarat">Gujarat</option>
+                                                        <option value="Haryana">Haryana</option>
+                                                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                                        <option value="Jharkhand">Jharkhand</option>
+                                                        <option value="Karnataka">Karnataka</option>
+                                                        <option value="Kerala">Kerala</option>
+                                                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                                        <option value="Maharashtra">Maharashtra</option>
+                                                        <option value="Manipur">Manipur</option>
+                                                        <option value="Meghalaya">Meghalaya</option>
+                                                        <option value="Mizoram">Mizoram</option>
+                                                        <option value="Nagaland">Nagaland</option>
+                                                        <option value="Odisha">Odisha</option>
+                                                        <option value="Punjab">Punjab</option>
+                                                        <option value="Sikkim">Sikkim</option>
+                                                        <option value="Tamil Nadu">Tamil Nadu</option>
+                                                        <option value="Telangana">Telangana</option>
+                                                        <option value="Tripura">Tripura</option>
+                                                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                                        <option value="Uttarakhand">Uttarakhand</option>
+                                                        <option value="West Bengal">West Bengal</option>
+                                                        <!-- Union Territories -->
+                                                        <option value="Delhi">Delhi</option>
+                                                        <option value="Puducherry">Puducherry</option>
+                                                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                                <div class="contact-one__input-box">
+                                                    <select name="season" required id="pass">
+                                                        <option value="" selected disabled>Select Season</option>
+                                                        <option value="Whole Year">Whole Year</option>
+                                                        <option value="Kharif">Kharif</option>
+                                                        <option value="Rabi">Rabi</option>
+                                                        <option value="Autumn">Autumn</option>
+                                                        <option value="Summer">Summer</option>
+                                                        <option value="Winter">Winter</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-xl-12">
+
+                                                <div class="contact-one__btn-box">
+                                                    <center><button type="submit"
+                                                            class="thm-btn contact-one__btn">Predict Now
+                                                            <i class="icon-right-arrow"></i> </button></center>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <center> {% if result %}
+                            <h1 id="crop" style="font-weight: 900px;">Recommended Crop: <span
+                                    style="color: rgb(217, 28, 28);">{{result}}</span></h1>
+                            {% endif %}
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Cta One Start-->
+        <br><br><br>
+        <!--Site Footer Start-->
+        <footer class="site-footer">
+            <div class="site-footer__top">
+                <div class="container">
+                    <div class="site-footer__top-inner">
+                        <div class="site-footer-shape-1 float-bob-x"
+                            style="background-image: url(/static/assets/images/shapes/site-footer-shape-1.png);"></div>
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                                <div class="footer-widget__column footer-widget__about">
+                                    <div class="footer-widget__logo">
+                                        <a href=""><img src="{% static 'assets/images/resources/footer-logo.png' %}"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="footer-widget__about-text-box">
+                                        <p class="footer-widget__about-text">Welcome to our Agriculture Crop
+                                            Recommendation System based on Season and Productivity.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4"></div>
+                            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                                <div class="footer-widget__column footer-widget__Contact">
+                                    <div class="footer-widget__title-box">
+                                        <h3 class="footer-widget__title">Contact</h3>
+                                    </div>
+                                    <ul class="footer-widget__Contact-list list-unstyled">
+                                        <li>
+                                            <div class="icon">
+                                                <span class="fas fa-phone-square-alt"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p><a>+92 (0088) 6823</a></p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <span class="fas fa-envelope"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p><a>Lcc@company.com</a></p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-pin"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p>80 Broklyn Golden Street. USA</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <form class="footer-widget__Contact-form">
+                                        <div class="footer-widget__Contact-input-box">
+                                            <input type="email" placeholder="Email Address" name="email">
+                                            <button type="submit" class="footer-widget__Contact-btn"><i
+                                                    class="icon-right-arrow"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="site-footer__bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="site-footer__bottom-inner">
+                                <p class="site-footer__bottom-text">© Copyright 2022 by <a href="#">TeamLcc</a></p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Site Footer End-->
+
+
+    </div><!-- /.page-wrapper -->
+
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+            <div class="logo-box">
+                <a href="" aria-label="logo image"><img src="{% static 'assets/images/resources/logo-2.png' %}"
+                        width="122" alt="" /></a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a>LCC@gmail.com</a>
+                </li>
+                <li>
+                    <i class="fa fa-phone-alt"></i>
+                    <a href="tel:666-888-0000">666 888 0000</a>
+                </li>
+            </ul><!-- /.mobile-nav__contact -->
+
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+
+    <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <!-- /.search-popup__overlay -->
+        <div class="search-popup__content">
+            <form action="#">
+                <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
+                <input type="text" id="search" placeholder="Search Here..." />
+                <button type="submit" aria-label="search submit" class="thm-btn">
+                    <i class="icon-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+        <!-- /.search-popup__content -->
+    </div>
+    <!-- /.search-popup -->
+
+
+
+    <script src="{% static 'assets/vendors/jquery/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jarallax/jarallax.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-appear/jquery.appear.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-validate/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/nouislider/nouislider.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/odometer/odometer.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/swiper/swiper.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/tiny-slider/tiny-slider.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/wnumb/wNumb.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/wow/wow.js' %}"></script>
+    <script src="{% static 'assets/vendors/isotope/isotope.js' %}"></script>
+    <script src="{% static 'assets/vendors/countdown/countdown.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/bxslider/jquery.bxslider.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/bootstrap-select/js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/vegas/vegas.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-ui/jquery-ui.js' %}"></script>
+    <script src="{% static 'assets/vendors/timepicker/timePicker.js' %}"></script>
+    <script src="{% static 'assets/vendors/circleType/jquery.circleType.js' %}"></script>
+    <script src="{% static 'assets/vendors/circleType/jquery.lettering.min.js' %}"></script>
+
+
+
+
+    <!-- template js -->
+    <script src="{% static 'assets/js/agrion.js' %}"></script>
+</body>
+
+
+<!-- Mirrored from pixydrops.com/agrionhtml/main-html/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Mar 2024 15:34:13 GMT -->
+
+</html>
